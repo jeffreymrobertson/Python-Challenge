@@ -1,17 +1,29 @@
 import os
-import csv
+import csv 
 
 output_path = os.path.join('Resources','budget_data.csv')
-#output_path = "Resources/budget_data.csv"
-# print (output_path)
+
+#create variables to store lists
+date = []
+profit = []
+
 with open(output_path, 'r') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csvreader = (csv.reader(csvfile, delimiter=','))
+    col_num = 1
 
-    print(csvreader)
-
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
-
+    csvheader = next(csvreader)
+    
     for row in csvreader:
-        print(row)
+        date.append(row[0])
+        profit.append(row[1])
+    
+    fProfit = [float(i) for i in profit]
+    mydict = {date: fProfit for date, 
+              fProfit in zip(date, fProfit)
+    }
 
+    print(sum(fProfit))
+    print(len(date))
+
+
+print(mydict)
