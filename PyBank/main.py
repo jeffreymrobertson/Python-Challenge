@@ -41,5 +41,5 @@ with open(input_path,'w') as textfile:
     thisline(f'Total Months: {len(date)}\n\n')
     thisline(f'Total: ${sum(fProfit)}\n\n')
     thisline(f'Average Change = {avChange}\n\n')
-    thisline(f'Greates Increase in Profits: {date[maxdate_index]} {maxchange}\n\n')
-    thisline(f'Greatest Decrease in Profits: {date[mindate_index]} {minchange}')
+    thisline(f'Greatest Increase in Profits: {date[maxdate_index]} ${maxchange}\n\n')
+    thisline(f'Greatest Decrease in Profits: {date[mindate_index]} ${minchange}')
