@@ -34,6 +34,15 @@ with open(output_path, 'r') as csvfile:
         elif s == minchange :
             mindate_index = index + 1
 
+
+    print('Financial Analyis\n\n'+'---------------------------------\n\n')
+    print(f'Total Months: {len(date)}\n\n')
+    print(f'Total: ${sum(fProfit)}\n\n')
+    print(f'Average Change = {avChange}\n\n')
+    print(f'Greatest Increase in Profits: {date[maxdate_index]} ${maxchange}\n\n')
+    print(f'Greatest Decrease in Profits: {date[mindate_index]} ${minchange}')    
+        
+
 #print all the values into a textfile
 with open(input_path,'w') as textfile:
     thisline = textfile.write
