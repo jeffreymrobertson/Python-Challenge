@@ -31,11 +31,11 @@ with open(output_path, 'r') as csvfile:
     canb= 0
     canc= 0
     for voters in candidate:
-        if voters == candidate[0]:
+        if voters == list_cand[0]:
             cana += 1
-        elif voters == candidate[1]:
+        elif voters == list_cand[1]:
             canb += 1
-        elif voters == candidate[2]:
+        elif voters == list_cand[2]:
             canc += 1
 
     
@@ -53,8 +53,13 @@ with open(output_path, 'r') as csvfile:
         else:
             winner = str(list_cand[2])
 
+    print(f'Total Votes: {total_votes} \n\n' + '------------------------\n\n')
 
-    
+    print(f'{list_cand[0]}: {percentage[0]}% {cana}\n\n')
+    print(f'{list_cand[1]}: {percentage[1]}% {canb}\n\n')
+    print(f'{list_cand[2]}: {percentage[2]}% {canc}\n\n')
+    print(f'Winner: {winner} \n\n' + '-------------------------------')
+
 
 with open(input_path, 'w') as textfile:
     tw = textfile.write
